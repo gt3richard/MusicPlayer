@@ -1,0 +1,10 @@
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\bin\Debug\Mp3DAL.dll.config
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\bin\Debug\Mp3DAL.dll
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\bin\Debug\Mp3DAL.pdb
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\bin\Debug\EntityFramework.dll
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\bin\Debug\EntityFramework.xml
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\obj\Debug\MusicPlayer.Data.csprojResolveAssemblyReference.cache
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\obj\Debug\Mp3DAL.dll
+C:\Users\Richard\Documents\GitHub\MusicPlayer\Mp3DAL\obj\Debug\Mp3DAL.pdb
