@@ -50,14 +50,35 @@ namespace MusicPlayer.Controller
                 if (objAdd == null)
                     throw new ArgumentNullException("File was not loaded.");
 
-                dbObj.tblMedias.Add(objAdd);  //adding a song to the library
-                dbObj.SaveChanges();            // saving schanges in the db
-
-                LibraryEvent.Modified();
+                AddMedia(objAdd);
             }
             catch (ArgumentNullException ex)
             {
                 Logger.Write(ex, System.Reflection.MethodBase.GetCurrentMethod().Name, Logger.LogType.MessageBox, Logger.LogLevel.Warning);
+            }
+            catch (Exception ex)
+            {
+                Logger.Write(ex, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            }
+        }
+
+        public static void AddMedia(tblMedia mediaFile)
+        {
+            AddMedia(new List<tblMedia>() { mediaFile });
+        }
+
+        public static void AddMedia(List<tblMedia> mediaFiles)
+        {
+            try
+            {
+                foreach (var file in mediaFiles)
+                {
+                    dbObj.tblMedias.Add(file);  //adding a song to the library
+                }
+                
+                dbObj.SaveChanges();            // saving schanges in the db
+
+                LibraryEvent.Modified();
             }
             catch (Exception ex)
             {

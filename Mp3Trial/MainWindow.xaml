@@ -28,7 +28,7 @@
             <DataGrid x:Name="tblMediaDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" Height="397" 
                       ItemsSource="{Binding}" Canvas.Left="382" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True" 
                       Canvas.Top="20" Width="419" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                      SelectionChanged="tblMediaDataGrid_SelectionChanged">
+                      SelectionChanged="tblMediaDataGrid_SelectionChanged" AllowDrop="True" PreviewDragEnter="tblMediaDataGrid_PreviewDragEnter" PreviewDrop="tblMediaDataGrid_PreviewDrop">
                 <DataGrid.RowStyle>
                     <Style TargetType="{x:Type DataGridRow}">
                         <EventSetter Event="MouseDoubleClick" Handler="tblMediaDataGrid_rowDoubleClick"/>

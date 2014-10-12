@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
@@ -289,6 +290,26 @@ namespace MusicPlayer
             MediaController.Stop();
         }
 
+        private void tblMediaDataGrid_PreviewDragEnter(object sender, System.Windows.DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(System.Windows.DataFormats.FileDrop, true) == true) //Check if a File
+                e.Effects = System.Windows.DragDropEffects.All;
+            else
+                e.Effects = System.Windows.DragDropEffects.None;
+
+            e.Handled = true;
+        }
+
+        private void tblMediaDataGrid_PreviewDrop(object sender, System.Windows.DragEventArgs e)
+        {
+            var filesPaths = (string[])e.Data.GetData(System.Windows.DataFormats.FileDrop, true);
+
+            var files = FileLoader.Load(filesPaths);
+
+            LibraryController.AddMedia(files);
+        }
+
+
         #endregion
 
         #region Private Methods
@@ -327,6 +348,8 @@ namespace MusicPlayer
 
         #endregion
 
+        
+       
      
         
 
