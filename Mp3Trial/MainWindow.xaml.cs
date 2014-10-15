@@ -309,6 +309,19 @@ namespace MusicPlayer
             LibraryController.AddMedia(files);
         }
 
+        private void CM_AddMedia_Click(object sender, RoutedEventArgs e)
+        {
+            LibraryController.AddMedia();
+        }
+
+        private void CM_RemoveMedia_Click(object sender, RoutedEventArgs e)
+        {
+            if (tblMediaDataGrid.SelectedItem != null)
+            {
+                tblMedia delObj = tblMediaDataGrid.SelectedItem as tblMedia;
+                LibraryController.DeleteMedia(delObj);
+            }
+        }
 
         #endregion
 
@@ -348,8 +361,9 @@ namespace MusicPlayer
 
         #endregion
 
-        
        
+
+        
      
         
 

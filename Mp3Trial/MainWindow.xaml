@@ -13,13 +13,14 @@
 					x:Name="slideVolume" ValueChanged="slideVolume_ValueChanged" Value="1" Canvas.Left="595" Canvas.Top="26"/>
                 <Label Content="Volume :" HorizontalAlignment="Right" Height="32" VerticalAlignment="Bottom" Width="56" Canvas.Left="534" Canvas.Top="26"/>
                 <Button x:Name="btnPlayPause" Content="Play" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
-					Height="32" Width="30" Click="btnPlayPause_Click" Canvas.Left="159" Canvas.Top="26"/>
+					Height="32" Width="46" Click="btnPlayPause_Click" Canvas.Left="143" Canvas.Top="26" Tag="Play">
+                </Button>
                 <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
 					Height="32" Width="30" Click="btnStop_Click" Canvas.Left="244" Canvas.Top="26"/>
                 <Button Content="Add Song" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="btnAddSong"
 					Width="60" Height="32" Click="btnAddSong_Click" Canvas.Top="26" Canvas.Left="279"/>
                 <Button Name="btnNxt" Content="Next" Width="45" Canvas.Left="194" Canvas.Top="26" Height="32" Click="btnNxt_Click"/>
-                <Button x:Name="btnPrev" Content="Prev" Width="45" Canvas.Left="109" Canvas.Top="26" Height="32" Click="btnPrev_Click"/>
+                <Button x:Name="btnPrev" Content="Prev" Width="45" Canvas.Left="93" Canvas.Top="26" Height="32" Click="btnPrev_Click"/>
                 <Button Content="Delete Song" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="btnDeleteSong"
                 	Width="72" Height="32" Click="btnDeleteSong_Click" Canvas.Top="26" Canvas.Left="344"/>
 
@@ -42,6 +43,12 @@
                     <DataGridTextColumn x:Name="yearColumn" Binding="{Binding Year}" Header="Year" Width="*"/>
                     <DataGridTextColumn x:Name="commentsColumn" Binding="{Binding Comments}" Header="Comments" Width="*"/>
                 </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Add Media" Click="CM_AddMedia_Click"></MenuItem>
+                        <MenuItem Header="Remove Media" Click="CM_RemoveMedia_Click"></MenuItem>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
             </DataGrid>
 
         </Canvas>
